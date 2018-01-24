@@ -1,0 +1,13 @@
+.field {
+padding: 10px 0; }
+.field label {
+    display: block;
+    padding: 5px 0; }
+.field input[type="text"] {
+    width: 350px;
+    max-width: 100%; }
+.field a {
+    color: #999;
+    font-style: italic; }
+    .field a:hover {
+    color: #13699E; }
