@@ -2,7 +2,7 @@
     /*
     Plugin Name: Find State Legislators
     Description: Find state legislators by ZIP code 
-    Version: 1.1
+    Version: 1.2
     Author: Glantz Design
     Author URI: https://glantz.net
     License: GPL2
@@ -16,26 +16,34 @@ function load_page() {
     wp_enqueue_style( 'fsl_page_style' ); 
     // wp_enqueue_script( 'fsl_page_script' ); 
     wp_enqueue_script('fsl_script');
-    ?>
-   <div class="fsl-container">
-        <form id="zipcode" method="post" action="">
-        <label for="user-zipcode">Enter a ZIP Code</label>
-        <input id="user-zipcode" type="text" name="user-zipcode">
-        <input type="submit">
-        </form>
-        <ul class="search-result"><?php getLegislator(getZip()); ?></ul>
-    </div>
 
-    <?php  
+    //Create the output object. This is for using short code to output large HTML section.
+    ob_start();
+    ?>
+    <div class="fsl-container">
+        <form id="zipcode" method="post" action="">
+            <label for="user-zipcode">Enter a ZIP Code</label>
+            <input id="user-zipcode" type="text" name="user-zipcode">
+            <input type="submit">
+        </form>
+       <ul class="search-result"><?php getLegislator(getZip()); ?></ul>
+    </div>
+    <?php
+
+    // Capture the output in a variable, then return it.
+    $output = ob_get_clean();
+    return $output;
+ 
 }
-add_shortcode( 'fsl', 'load_page' );
+add_shortcode( 'find_state_legislator', 'load_page' );
+
 
 //Cache control
 header("Cache-Control: private, max-age=10800, pre-check=10800");
 header("Pragma: private");
 header("Expires: " . date(DATE_RFC822,strtotime("+2 day")));
 
-//Get zipcode from form
+//Get zip code from form
 function getZip(){
     if(isset($_POST["user-zipcode"])){
         $user_zip = $_POST["user-zipcode"];
