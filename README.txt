@@ -1,10 +1,9 @@
-# WordPress Plugin - Find State Legislator
+WordPress Plugin - Find State Legislator
 
 Find State Legislator is a WordPress plugin that will out put a form on a page, and allow users to search legislators by zip code. 
-![Find State Legislator Screenshot](https://raw.githubusercontent.com/guanyixi/find_state_legislator/master/screenshot.png "Find State Legislator Screenshot")
 
-### Settings and Features
-* Settings section requires [Google geo api key](https://developers.google.com/maps/documentation/geocoding/get-api-key), and [openstates api key](https://openstates.org/api/register/).
+Settings and Features
+* Settings section requires Google geo api key and openstates api key.
 * Put shortcode [find_state_legislator] on any page to display the form.
 * It has minimal styling ready, you can customize it in your theme css file easily.
 * Validation ready
@@ -12,8 +11,7 @@ Find State Legislator is a WordPress plugin that will out put a form on a page, 
 This is the first WordPress plugin I've ever made from scratch. I've learned so much from this project including api, some more PHP functions, and WordPress plugin development skills. Starting from the simple part of front end development. I am getting to the really fun part of web development.
 
 
-
-### Versions
+Versions
 
 v1.0
 Initial the plugin 
